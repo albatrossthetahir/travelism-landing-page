@@ -1,127 +1,264 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travelism | USA & UK Visa Consulting Firm</title>
+    <title>Travelism | Premier USA Visa Consultants in Surat</title>
     <!-- Premium Font Pairings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS CDN Integration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        travelism: {
+                            DEFAULT: '#ed1c25',
+                            hover: '#cc161e',
+                            light: 'rgba(237, 28, 37, 0.05)',
+                            glow: 'rgba(237, 28, 37, 0.15)',
+                        },
+                        dark: {
+                            main: '#0f172a',
+                            muted: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        head: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 20px 40px -10px rgba(15, 23, 42, 0.05)',
+                        'modal': '0 30px 60px rgba(15, 23, 42, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
-    <!-- Glassmorphism Header -->
-    <header class="navbar">
-        <div class="container nav-wrapper">
-            <a href="#" class="brand-logo">Travelism</a>
+<body class="font-sans bg-white text-dark-main leading-relaxed overflow-x-hidden antialiased">
 
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
-                <span></span><span></span><span></span>
+    <!-- Simple Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0 relative z-50">
+                <img src="assets/logo.jpg" alt="Travelism" class="h-10 object-contain">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#about" class="text-sm font-semibold text-gray-600 hover:text-travelism transition-colors">Our
+                    Leadership</a>
+                <a href="#services"
+                    class="text-sm font-semibold text-gray-600 hover:text-travelism transition-colors">Specialities</a>
+                <a href="#process"
+                    class="text-sm font-semibold text-gray-600 hover:text-travelism transition-colors">The Framework</a>
+            </nav>
+
+            <!-- Header CTA -->
+            <div class="hidden lg:flex z-50">
+                <a href="#contact"
+                    class="px-6 py-2.5 bg-travelism text-white text-sm font-bold rounded-lg shadow-sm hover:bg-travelism-hover transition-colors">Request
+                    Consultation</a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <input type="checkbox" id="menu-toggle" class="peer hidden">
+            <label for="menu-toggle"
+                class="lg:hidden cursor-pointer flex flex-col gap-1.5 relative z-50 p-2 border border-gray-100 rounded-md">
+                <span class="w-5 h-0.5 bg-gray-800 block rounded-full"></span>
+                <span class="w-5 h-0.5 bg-gray-800 block rounded-full"></span>
+                <span class="w-5 h-0.5 bg-gray-800 block rounded-full"></span>
             </label>
 
-            <nav class="nav-menu">
-                <a href="#services" class="nav-link">Our Expertise</a>
-                <a href="#process" class="nav-link">The Framework</a>
-                <a href="#contact" class="btn btn-primary">Schedule Priority Consultation</a>
-            </nav>
+            <!-- Ultra-Simple Mobile Overlay Menu -->
+            <div
+                class="peer-checked:flex hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] bg-white z-40 flex-col items-center justify-start pt-16 gap-8 text-xl font-bold">
+                <a href="#about" onclick="document.getElementById('menu-toggle').checked=false"
+                    class="text-gray-800 hover:text-travelism">Our Leadership</a>
+                <a href="#services" onclick="document.getElementById('menu-toggle').checked=false"
+                    class="text-gray-800 hover:text-travelism">Specialities</a>
+                <a href="#process" onclick="document.getElementById('menu-toggle').checked=false"
+                    class="text-gray-800 hover:text-travelism">The Framework</a>
+                <a href="#contact" onclick="document.getElementById('menu-toggle').checked=false"
+                    class="text-white bg-travelism px-8 py-4 rounded-xl mt-4">Consultation</a>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Split Hero Section -->
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-content animate-slide-up">
-                    <span class="eyebrow">Elite Visa Consultants in Surat</span>
-                    <h1 class="hero-heading">Navigate USA & UK Visas With <span>Absolute Confidence.</span></h1>
-                    <p class="hero-paragraph">We go beyond form-filling. Travelism strategically builds your visa case
-                        with rigorous documentation audits and mock consular interviews, ensuring the highest
-                        probability of approval.</p>
-                    <div class="hero-actions">
-                        <a href="#contact" class="btn btn-primary btn-lg">Begin Application</a>
-                        <a href="#services" class="btn btn-text">View Our Specialities &rarr;</a>
+        <section
+            class="pt-32 pb-16 lg:pt-40 lg:pb-24 min-h-[auto] lg:min-h-screen flex items-center relative overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-center text-center md:text-left">
+                <div class="mx-auto md:mx-0 max-w-2xl reveal active">
+                    <span
+                        class="inline-block uppercase text-xs md:text-sm font-bold tracking-widest text-dark-muted mb-3">The
+                        Vanguard of Visa Services in Surat</span>
+                    <h1 class="font-head font-extrabold text-4xl md:text-5xl lg:leading-[1.1] mb-5">
+                        Unrivaled Expertise in <br class="hidden lg:block"><span
+                            class="bg-gradient-to-br from-dark-main to-travelism bg-clip-text text-transparent">USA Visa
+                            Services.</span>
+                    </h1>
+                    <p class="text-base text-dark-muted mb-6 max-w-xl mx-auto md:mx-0">Travelism is Surat’s premier visa
+                        service provider. We deliver reliable, efficient, and high-quality assistance for USA visa
+                        applications, turning complex bureaucratic processes into a seamless, confident journey.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start mt-6">
+                        <a href="#contact"
+                            class="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold text-white bg-travelism hover:bg-travelism-hover shadow-[0_10px_30px_-10px_#ed1c25] hover:shadow-[0_15px_35px_-10px_#ed1c25] hover:-translate-y-1 transition-all duration-300 shine-effect text-base">Begin
+                            Your Journey</a>
+                        <a href="#services"
+                            class="w-full sm:w-auto text-dark-main px-4 py-3 font-semibold hover:text-travelism transition-colors text-base">Explore
+                            Our Specialties &rarr;</a>
                     </div>
                 </div>
-                <!-- Custom Generated Hero Visual -->
-                <div class="hero-visual animate-slide-up offset-delay">
-                    <div class="image-wrapper">
-                        <img src="assets/hero_visa.png" alt="Travelism Visa Consultation Office" class="premium-img">
-                        <div class="floating-badge">
-                            <strong>10k+</strong><br>Visas Approved
+
+                <!-- Hero Visual -->
+                <div class="relative p-2 reveal delay-1 mt-10 md:mt-0">
+                    <img src="assets/hero_visa.png" alt="Travelism Visa Consultation Office"
+                        class="w-full h-auto rounded-xl object-cover block shadow-glass">
+                    <div
+                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 md:left-[-30px] md:translate-x-0 bg-white p-5 md:p-6 rounded-xl border border-travelism-light shadow-modal z-10 lg:pulse-anim text-center md:text-left min-w-[160px]">
+                        <strong
+                            class="text-3xl md:text-4xl text-travelism font-head leading-none block mb-1">10k+</strong>
+                        <span class="text-xs font-semibold text-dark-main uppercase tracking-wider">Visas
+                            Approved</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative Blurs -->
+            <div class="bg-blur blur-1"></div>
+            <div class="bg-blur blur-2"></div>
+        </section>
+
+        <!-- Executive Trust Strip -->
+        <section class="bg-travelism border-y border-dark-main/10 py-10 lg:py-12">
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-around items-center gap-8 md:gap-4 text-center">
+                <div class="reveal">
+                    <h3 class="text-3xl lg:text-4xl text-white mb-1 font-extrabold font-serif">99.4%</h3>
+                    <p class="text-white/90 m-0 text-xs font-semibold uppercase tracking-widest">Interview Success Rate
+                    </p>
+                </div>
+                <div class="reveal delay-1">
+                    <h3 class="text-3xl lg:text-4xl text-white mb-1 font-extrabold font-serif">18+</h3>
+                    <p class="text-white/90 m-0 text-xs font-semibold uppercase tracking-widest">Years Experience</p>
+                </div>
+                <div class="reveal delay-2">
+                    <h3 class="text-3xl lg:text-4xl text-white mb-1 font-extrabold font-serif">USA</h3>
+                    <p class="text-white/90 m-0 text-xs font-semibold uppercase tracking-widest">Primary Focus</p>
+                </div>
+                <div class="reveal delay-3">
+                    <h3 class="text-3xl lg:text-4xl text-white mb-1 font-extrabold font-serif">24/7</h3>
+                    <p class="text-white/90 m-0 text-xs font-semibold uppercase tracking-widest">Concierge Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Spotlight Section (Modal Look) -->
+        <section id="about" class="py-16 lg:py-24 bg-slate-50 relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div
+                    class="max-w-4xl mx-auto p-8 md:p-10 lg:p-16 border-none shadow-modal bg-white rounded-2xl md:rounded-[20px] text-center relative z-10 flex flex-col items-center reveal">
+                    <span
+                        class="inline-block uppercase text-xs font-bold tracking-widest text-travelism mb-3">Leadership
+                        & Legacy</span>
+                    <h2 class="font-head text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Directed by <span
+                            class="font-serif italic font-semibold text-travelism">Azharuddin Ansari</span></h2>
+                    <p class="text-base md:text-lg text-dark-main font-semibold mb-4 leading-relaxed max-w-2xl">With
+                        over 18+ years of profound industry experience, Azharuddin Ansari has established Travelism as
+                        one of the definitive authorities on USA visa services in Surat.</p>
+                    <p class="text-dark-muted text-sm md:text-base mb-6 max-w-2xl leading-relaxed">Navigating the
+                        stringent landscape of international mobility requires architectural precision. Under
+                        Azharuddin's leadership, Travelism goes beyond standard paperwork. We offer bespoke strategies,
+                        deep financial portfolio reviews, and meticulous embassy interview training to ensure an
+                        unparalleled probability of approval.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 mt-4 justify-center w-full">
+                        <div
+                            class="inline-flex items-center justify-center gap-2 py-3 px-5 bg-travelism-light border border-travelism-glow rounded-full text-travelism font-semibold text-sm w-full sm:w-auto">
+                            <span class="text-lg">👑</span> 18+ Years Expert Guidance
+                        </div>
+                        <div
+                            class="inline-flex items-center justify-center gap-2 py-3 px-5 bg-travelism-light border border-travelism-glow rounded-full text-travelism font-semibold text-sm w-full sm:w-auto">
+                            <span class="text-lg">🏛️</span> Master of Consular Policies
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Executive Trust Strip -->
-        <section class="trust-band">
-            <div class="container flex-band">
-                <div class="trust-item">
-                    <h3>99.4%</h3>
-                    <p>Interview Success Rate</p>
-                </div>
-                <div class="trust-item">
-                    <h3>7</h3>
-                    <p>Dedicated Experts</p>
-                </div>
-                <div class="trust-item">
-                    <h3>Specialist</h3>
-                    <p>USA & UK Focus</p>
-                </div>
-                <div class="trust-item">
-                    <h3>24/7</h3>
-                    <p>Concierge Support</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Sleek Zig-Zag Services -->
-        <section id="services" class="section services-section">
-            <div class="container">
-                <div class="section-title center">
-                    <span class="eyebrow">Our Specialities</span>
-                    <h2>Precision-Driven Visa Processing</h2>
+        <section id="services" class="py-16 lg:py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 lg:mb-16 reveal">
+                    <span class="inline-block uppercase text-xs font-bold tracking-widest text-dark-muted mb-3">Our Core
+                        Focus</span>
+                    <h2 class="font-head text-2xl md:text-4xl font-bold mb-3">Precision-Driven Visa Processing</h2>
+                    <p class="max-w-2xl mx-auto text-base text-dark-muted">Specializing heavily in USA applications,
+                        complemented by expert UK processing.</p>
                 </div>
 
-                <!-- USA Section -->
-                <div class="service-row">
-                    <div class="service-text">
-                        <div class="icon-box">🇺🇸</div>
-                        <h3>USA Visa Strategy</h3>
-                        <p>Securing a US Visa requires more than basic paperwork. We meticulously prepare DS-160 forms
-                            for B1/B2, F1, and H1-B applicants and run exhaustive embassy-level mock interviews so you
-                            walk in fully prepared.</p>
-                        <ul class="check-list">
-                            <li>DS-160 Tactical Optimization</li>
-                            <li>Comprehensive Financial Portfolio Review</li>
-                            <li>Rigorous Embassy Interview Training</li>
+                <!-- USA Section (Highlighted) -->
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-24">
+                    <div class="reveal text-center lg:text-left order-2 lg:order-1">
+                        <div class="text-4xl mb-4 drop-shadow-[0_10px_15px_rgba(237,28,37,0.15)] inline-block">🇺🇸
+                        </div>
+                        <h3 class="font-head text-xl md:text-2xl font-bold mb-3">USA Visa Strategy</h3>
+                        <p class="text-base text-dark-muted mb-5">Securing a US Visa requires impeccable formatting and
+                            strategic foresight. We provide top-tier assistance for B1/B2, F1, and H1-B applicants,
+                            running exhaustive embassy-level mock interviews so you walk in fully prepared and
+                            confident.</p>
+                        <ul class="text-left check-list inline-block">
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">DS-160
+                                Tactical Optimization</li>
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">Comprehensive
+                                Financial Portfolio Review</li>
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">Rigorous
+                                Embassy Interview Training</li>
                         </ul>
                     </div>
-                    <div class="service-image-box">
-                        <img src="assets/usa_visa.png" alt="USA Visa" class="premium-img rounded">
+                    <div class="reveal order-1 lg:order-2">
+                        <div
+                            class="p-3 lg:p-4 bg-slate-50 border border-dark-main/10 -rotate-2 hover:rotate-0 hover:scale-[1.02] hover:border-travelism/30 hover:shadow-[0_20px_40px_rgba(237,28,37,0.15)] transition-all duration-700 rounded-xl">
+                            <img src="assets/usa_visa.png" alt="USA Visa" class="w-full h-auto rounded-lg object-cover">
+                        </div>
                     </div>
                 </div>
 
                 <!-- UK Section -->
-                <div class="service-row reverse">
-                    <div class="service-image-box">
-                        <img src="assets/uk_visa.png" alt="UK Visa" class="premium-img rounded">
+                <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="reveal">
+                        <div
+                            class="p-3 lg:p-4 bg-slate-50 border border-dark-main/10 rotate-2 hover:rotate-0 hover:scale-[1.02] hover:border-travelism/30 hover:shadow-[0_20px_40px_rgba(237,28,37,0.15)] transition-all duration-700 rounded-xl">
+                            <img src="assets/uk_visa.png" alt="UK Visa" class="w-full h-auto rounded-lg object-cover">
+                        </div>
                     </div>
-                    <div class="service-text">
-                        <div class="icon-box">🇬🇧</div>
-                        <h3>UK Visa Processing</h3>
-                        <p>The UK Visas and Immigration (UKVI) standards are notoriously strict. We align your financial
-                            evidence, cover letters, and biometric appointments flawlessly for Standard Visitor,
-                            Student, and Skilled Worker visas.</p>
-                        <ul class="check-list">
-                            <li>Strict UKVI Guideline Compliance</li>
-                            <li>VFS Biometric Priority Scheduling</li>
-                            <li>Detailed Sponsorship & Document Vetting</li>
+                    <div class="reveal text-center lg:text-left">
+                        <div class="text-4xl mb-4 drop-shadow-[0_10px_15px_rgba(237,28,37,0.15)] inline-block">🇬🇧
+                        </div>
+                        <h3 class="font-head text-xl md:text-2xl font-bold mb-3">UK Visa Processing</h3>
+                        <p class="text-base text-dark-muted mb-5">The UK Visas and Immigration (UKVI) standards are
+                            notoriously strict. We align your financial evidence, cover letters, and biometric
+                            appointments flawlessly for Standard Visitor, Student, and Skilled Worker visas.</p>
+                        <ul class="text-left check-list inline-block">
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">Strict UKVI
+                                Guideline Compliance</li>
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">VFS Biometric
+                                Priority Scheduling</li>
+                            <li class="flex items-center gap-3 mb-3 font-medium text-base text-dark-main">Detailed
+                                Document Vetting</li>
                         </ul>
                     </div>
                 </div>
@@ -129,80 +266,105 @@
         </section>
 
         <!-- Professional Step-Process -->
-        <section id="process" class="section bg-light">
-            <div class="container">
-                <div class="section-title center">
-                    <span class="eyebrow">Our Methodology</span>
-                    <h2>The Travelism Framework</h2>
+        <section id="process" class="py-16 lg:py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 lg:mb-16 reveal">
+                    <span class="inline-block uppercase text-xs font-bold tracking-widest text-travelism mb-3">Our
+                        Methodology</span>
+                    <h2 class="font-head text-2xl md:text-4xl font-bold">The Travelism Framework</h2>
                 </div>
-                <div class="process-grid">
-                    <div class="process-card">
-                        <span class="step-num">01</span>
-                        <h4>Strategic Assessment</h4>
-                        <p>We evaluate your academic and professional profile to identify visa risks and structural
-                            opportunities earlier on.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div
+                        class="p-6 lg:p-8 bg-white/85 backdrop-blur-md rounded-xl border border-dark-main/10 shadow-glass border-t-[3px] border-t-transparent hover:-translate-y-2 hover:border-t-travelism hover:shadow-modal transition-all duration-300 text-center md:text-left reveal delay-1">
+                        <span
+                            class="block text-4xl font-extrabold text-travelism-glow font-serif mb-4 leading-none">01</span>
+                        <h4 class="font-head text-lg font-bold text-dark-main mb-2">Strategic Assessment</h4>
+                        <p class="text-sm text-dark-muted">We evaluate your academic and professional profile to
+                            identify visa risks and structural opportunities earlier on.</p>
                     </div>
-                    <div class="process-card">
-                        <span class="step-num">02</span>
-                        <h4>Legal Assembly</h4>
-                        <p>Our experts meticulously curate, translate, and format your supporting documents for the
-                            consulate.</p>
+                    <div
+                        class="p-6 lg:p-8 bg-white/85 backdrop-blur-md rounded-xl border border-dark-main/10 shadow-glass border-t-[3px] border-t-transparent hover:-translate-y-2 hover:border-t-travelism hover:shadow-modal transition-all duration-300 text-center md:text-left reveal delay-2">
+                        <span
+                            class="block text-4xl font-extrabold text-travelism-glow font-serif mb-4 leading-none">02</span>
+                        <h4 class="font-head text-lg font-bold text-dark-main mb-2">Legal Assembly</h4>
+                        <p class="text-sm text-dark-muted">Our experts meticulously curate, translate, and format your
+                            supporting documents for the consulate.</p>
                     </div>
-                    <div class="process-card">
-                        <span class="step-num">03</span>
-                        <h4>Mock Interviews</h4>
-                        <p>We conduct rigorous 1-on-1 embassy simulations to build your absolute confidence and
-                            readiness.</p>
+                    <div
+                        class="p-6 lg:p-8 bg-white/85 backdrop-blur-md rounded-xl border border-dark-main/10 shadow-glass border-t-[3px] border-t-transparent hover:-translate-y-2 hover:border-t-travelism hover:shadow-modal transition-all duration-300 text-center md:text-left reveal delay-3">
+                        <span
+                            class="block text-4xl font-extrabold text-travelism-glow font-serif mb-4 leading-none">03</span>
+                        <h4 class="font-head text-lg font-bold text-dark-main mb-2">Mock Interviews</h4>
+                        <p class="text-sm text-dark-muted">We conduct rigorous 1-on-1 embassy simulations to build your
+                            absolute confidence and readiness.</p>
                     </div>
-                    <div class="process-card">
-                        <span class="step-num">04</span>
-                        <h4>Approval & Beyond</h4>
-                        <p>Reliable post-interview support, secure passport tracking, and thorough pre-departure
-                            advisory.</p>
+                    <div
+                        class="p-6 lg:p-8 bg-white/85 backdrop-blur-md rounded-xl border border-dark-main/10 shadow-glass border-t-[3px] border-t-transparent hover:-translate-y-2 hover:border-t-travelism hover:shadow-modal transition-all duration-300 text-center md:text-left reveal delay-4">
+                        <span
+                            class="block text-4xl font-extrabold text-travelism-glow font-serif mb-4 leading-none">04</span>
+                        <h4 class="font-head text-lg font-bold text-dark-main mb-2">Approval & Beyond</h4>
+                        <p class="text-sm text-dark-muted">Reliable post-interview support, secure passport tracking,
+                            and thorough pre-departure advisory.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Split Authority Contact Area -->
-        <section id="contact" class="section contact-section">
-            <div class="container contact-grid">
-                <div class="contact-info">
-                    <h2>Speak to a Visa <br><span>Expert Today.</span></h2>
-                    <p>Based in Surat, Gujarat. We serve ambitious travelers, students, and professionals aiming
-                        specifically for the US and UK.</p>
+        <section id="contact" class="py-16 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
+                <div class="reveal text-center md:text-left">
+                    <span class="inline-block uppercase text-xs font-bold tracking-widest text-dark-muted mb-3">Connect
+                        With The Best</span>
+                    <h2 class="font-head text-2xl md:text-4xl font-bold mb-4">Elevate Your Visa <br /><span
+                            class="bg-gradient-to-br from-dark-main to-travelism bg-clip-text text-transparent">Application
+                            Today.</span></h2>
+                    <p class="text-base text-dark-muted mb-6">Based in Surat, Gujarat. We serve ambitious travelers,
+                        students, and professionals aiming specifically for the US and UK.</p>
 
-                    <div class="info-block">
-                        <strong>Office Headquarters</strong>
-                        <span>Premium Executive Center,<br>Surat, Gujarat, India</span>
-                    </div>
-                    <div class="info-block">
-                        <strong>Direct Contact</strong>
-                        <span>+91 98765 43210 <br> consulting@travelism.com</span>
-                    </div>
+
                 </div>
 
-                <div class="contact-card">
-                    <form class="glass-form">
-                        <h3>Request Executive Consultation</h3>
-                        <div class="input-group">
-                            <label>Full Legal Name</label>
-                            <input type="text" placeholder="As it appears on your passport" required>
+                <div class="relative reveal delay-2">
+                    <div
+                        class="absolute -inset-10 bg-[radial-gradient(circle_at_center,rgba(237,28,37,0.12)_0%,transparent_70%)] z-0 rounded-2xl blur-[20px]">
+                    </div>
+                    <form
+                        class="relative z-1 bg-white border border-dark-main/10 shadow-modal rounded-2xl p-6 md:p-8 lg:p-10">
+                        <h3 class="font-head text-xl lg:text-2xl font-bold text-dark-main mb-6">Request Executive
+                            Consultation</h3>
+
+                        <div class="mb-5">
+                            <label
+                                class="block font-semibold text-xs uppercase tracking-widest text-dark-muted mb-2">Full
+                                Legal Name</label>
+                            <input type="text" placeholder="As it appears on passport" required
+                                class="w-full px-5 py-3 border border-dark-main/10 rounded-lg bg-slate-50 text-dark-main text-base focus:outline-none focus:border-travelism focus:bg-white focus:ring-2 focus:ring-travelism-glow transition-all">
                         </div>
-                        <div class="input-group">
-                            <label>Professional Email ID</label>
-                            <input type="email" placeholder="you@company.com" required>
+                        <div class="mb-5">
+                            <label
+                                class="block font-semibold text-xs uppercase tracking-widest text-dark-muted mb-2">Professional
+                                Email ID</label>
+                            <input type="email" placeholder="you@company.com" required
+                                class="w-full px-5 py-3 border border-dark-main/10 rounded-lg bg-slate-50 text-dark-main text-base focus:outline-none focus:border-travelism focus:bg-white focus:ring-2 focus:ring-travelism-glow transition-all">
                         </div>
-                        <div class="input-group">
-                            <label>Primary Interest</label>
-                            <select required>
+                        <div class="mb-6">
+                            <label
+                                class="block font-semibold text-xs uppercase tracking-widest text-dark-muted mb-2">Primary
+                                Interest</label>
+                            <select required
+                                class="w-full px-5 py-3 border border-dark-main/10 rounded-lg bg-slate-50 text-dark-main text-base focus:outline-none focus:border-travelism focus:bg-white focus:ring-2 focus:ring-travelism-glow transition-all appearance-none cursor-pointer">
                                 <option value="" disabled selected>Select Option</option>
-                                <option value="usa">USA Visa (B1/B2, F1, H1B)</option>
-                                <option value="uk">UK Visa (Visitor, Student, Tier 2)</option>
-                                <option value="mock">Rigorous Mock Interview Training</option>
+                                <option value="usa" class="bg-white text-dark-main">USA Visa (B1/B2, F1, H1B)</option>
+                                <option value="uk" class="bg-white text-dark-main">UK Visa (Visitor, Student, Tier 2)
+                                </option>
+                                <option value="mock" class="bg-white text-dark-main">Rigorous Mock Interview Training
+                                </option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Secure Your Appointment</button>
+                        <button type="submit"
+                            class="w-full inline-flex justify-center items-center px-6 py-3 rounded-xl font-bold text-white bg-travelism hover:bg-travelism-hover shadow-[0_5px_15px_-5px_#ed1c25] hover:-translate-y-0.5 transition-all duration-300 shine-effect text-base">Secure
+                            Your Appointment</button>
                     </form>
                 </div>
             </div>
@@ -210,24 +372,54 @@
     </main>
 
     <!-- Minimalist Deep Footer -->
-    <footer class="modern-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <h2>Travelism</h2>
-                    <p>Exclusive USA & UK Visa Consulting Firm.</p>
+    <footer class="pt-16 pb-8 bg-dark-main text-white border-t-4 border-travelism">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-8 pb-8 border-b border-white/10 mb-8 text-center md:text-left">
+                <div>
+                    <img src="assets/logo.jpg" alt="Travelism Logo" class="h-8 object-contain mb-3 mx-auto md:mx-0">
+                    <p class="text-white/70 text-sm">A Legacy of 18+ Years in Visa Consulting.</p>
                 </div>
-                <div class="footer-nav">
-                    <a href="#services">Specialities</a>
-                    <a href="#process">Methodology</a>
-                    <a href="#contact">Contact</a>
+                <div class="flex flex-col sm:flex-row gap-6 md:gap-8">
+                    <a href="#about"
+                        class="text-white/70 font-medium hover:text-travelism transition-colors text-base">Founder</a>
+                    <a href="#services"
+                        class="text-white/70 font-medium hover:text-travelism transition-colors text-base">USA
+                        Speciality</a>
+                    <a href="#process"
+                        class="text-white/70 font-medium hover:text-travelism transition-colors text-base">Methodology</a>
+                    <a href="#contact"
+                        class="text-white/70 font-medium hover:text-travelism transition-colors text-base">Contact</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Travelism Consulting. Designed for Architectural Excellence & Trust.</p>
+            <div class="text-center text-white/50 text-xs">
+                <p>&copy; 2026 Travelism Consulting (Lead: Azharuddin Ansari). Designed for Architectural Excellence &
+                    Trust.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
